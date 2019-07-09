@@ -2,4 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/MEFLight/v15/Server/sqlite3
+.vs/
+Core/obj/
+Core.Tests/bin/
+Core.Tests/obj/
+Core/bin/
