@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64B39190-D47C-4612-8942-7D0A62B5E48E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MEFLight</RootNamespace>
+    <AssemblyName>MEFLight</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dynamitey, Version=2.0.9.136, Culture=neutral, PublicKeyToken=cbf53ea3aeb972c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dynamitey.2.0.9.136\lib\net40\Dynamitey.dll</HintPath>
+    </Reference>
+    <Reference Include="ImpromptuInterface, Version=7.0.1.0, Culture=neutral, PublicKeyToken=0b1781c923b2975b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImpromptuInterface.7.0.1\lib\net40\ImpromptuInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Catalogs\AggregateCatalog.cs" />
+    <Compile Include="Collections\CompositionCatalogCollection.cs" />
+    <Compile Include="Catalogs\AssemblyCatalog.cs" />
+    <Compile Include="Attributes\ExportAttribute.cs" />
+    <Compile Include="Attributes\IAttributedImport.cs" />
+    <Compile Include="Attributes\ImportAttribute.cs" />
+    <Compile Include="Attributes\ImportingConstructorAttribute.cs" />
+    <Compile Include="Parts\ComposablePart.cs" />
+    <Compile Include="Defenitions\ContractBasedImportDefinition.cs" />
+    <Compile Include="Defenitions\ExportDefinition.cs" />
+    <Compile Include="Parts\ExportDelegatePart.cs" />
+    <Compile Include="Parts\IComposablePart.cs" />
+    <Compile Include="Defenitions\ImportDefinition.cs" />
+    <Compile Include="Defenitions\ComposablePartDefinition.cs" />
+    <Compile Include="Catalogs\CompositionCatalog.cs" />
+    <Compile Include="Catalogs\DirectoryCatalog.cs" />
+    <Compile Include="DiContainer.cs" />
+    <Compile Include="Extensions\AttributeExtensions.cs" />
+    <Compile Include="Extensions\GlobalExtensions.cs" />
+    <Compile Include="IComposablePartFactory.cs" />
+    <Compile Include="ICompositionElement.cs" />
+    <Compile Include="Parts\PartsComparer.cs" />
+    <Compile Include="Parts\ReflectedComposablePart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\IAttributeDiscovery.cs" />
+    <Compile Include="Reflection\IReflectionPartCreation.cs" />
+    <Compile Include="Reflection\Items\ReflectionItem.cs" />
+    <Compile Include="Reflection\Items\ReflectionMember.cs" />
+    <Compile Include="Reflection\Items\ReflectionParameter.cs" />
+    <Compile Include="Reflection\Items\ReflectionWitableMember.cs" />
+    <Compile Include="Defenitions\ReflectedComposablePartDefinition.cs" />
+    <Compile Include="Reflection\AttributeDiscovery.cs" />
+    <Compile Include="Reflection\ReflectionPartCreation.cs" />
+    <Compile Include="Resources\Messages.Designer.cs" />
+    <Compile Include="Catalogs\TypeCatalog.cs" />
+    <Compile Include="Services\CustomActivator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Messages.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
